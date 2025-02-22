@@ -1,6 +1,4 @@
 target/# Ignore Maven wrapper files
-.mvn/
-!/.mvn/wrapper/maven-wrapper.jar
 
 # Ignore IntelliJ IDEA project files
 .idea/
