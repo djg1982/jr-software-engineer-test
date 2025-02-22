@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.adobe.bookstore.model.BookStock;
+
 @RestController
 @RequestMapping("/books_stock/")
 public class BookStockResource {
@@ -23,5 +25,9 @@ public class BookStockResource {
         return bookStockRepository.findById(bookId)
                 .map(bookStock -> ResponseEntity.ok(bookStock))
                 .orElse(ResponseEntity.notFound().build());
+    }
+    @GetMapping("all")
+    public ResponseEntity<Iterable<BookStock>> getAllStock() {
+        return ResponseEntity.ok(bookStockRepository.findAll());
     }
 }

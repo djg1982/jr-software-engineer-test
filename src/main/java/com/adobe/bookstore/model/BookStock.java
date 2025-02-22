@@ -1,4 +1,4 @@
-package com.adobe.bookstore;
+package com.adobe.bookstore.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -21,6 +21,14 @@ public class BookStock {
 
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
+
+    public BookStock() {
+    }
+
+    public BookStock(String name, Integer quantity) {
+        this.name = name;
+        this.quantity = quantity;
+    }
 
     public String getId() {
         return id;
