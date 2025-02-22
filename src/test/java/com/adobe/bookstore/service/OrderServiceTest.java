@@ -78,7 +78,7 @@ public class OrderServiceTest {
     public void testCreateOrderWithExistingInventory() {
         Order order = new Order();
         order.setId(UUID.randomUUID().toString());
-        OrderItem item = new OrderItem(2, order, "ae1666d6-6100-4ef0-9037-b45dd0d5bb0e");
+        OrderItem item = new OrderItem(2, order, "d02b58ae-8731-451c-9acb-1941adf88501");
         order.setItems(Collections.singletonList(item));
 
         when(bookStockService.getBookStock(item.getBookId())).thenReturn(Optional.of(new BookStock(item.getBookId(), 7)));
